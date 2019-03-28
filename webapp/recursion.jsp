@@ -170,9 +170,14 @@
         if (height == 1) 
         {
     	    //TODO
+	   return 0;
         }
         
     	//TODO
+	else
+	{
+	   return nnaryTreeSize(factorial(branchingFactor), height - 1);
+	}
     }
 
     /** **********************************************************************
@@ -186,6 +191,11 @@
     public int treeSum(Tree tree)
     {
     	//TODO
+	int sum = 0;
+
+	sum += nnaryTreeSize(tree.getChildren().size(), tree.getValue());
+
+	return sum;
     }
     
     /** **********************************************************************
