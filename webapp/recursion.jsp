@@ -13,8 +13,8 @@
      * This lab tests your ability to implement recursion for several functions.
      * 
      * @authors: Stephen, Mukhtar, MoSho
-     * @editer: YOUR_NAME_HERE
-     * @version DATE_HERE
+     * @editer: Derek Ford
+     * @version 4/02/2019
      */
 
     /** **********************************************************************
@@ -36,7 +36,7 @@
         //TODO
 	if(value == 1)
 	{
-	   return;
+	   return value;
 	}
 
         /*
@@ -50,8 +50,7 @@
         //TODO
 	else
 	{
-	   value = value * (value - 1);
-	   factorial(value);
+	   return value * factorial(value - 1);
 	}
 
     }
@@ -77,13 +76,15 @@
         //TODO
 	if(n <= 1)
 	{
-		return n;
+          return n;
 	}
 
 	else
 	{
-	  return  fibonacci(n - 1) + fiboncacci(n-2);
-	}
+	  n = fibonacci(n - 1) + fibonacci(n-2);
+         return n;
+        }
+	
     }
 
     
@@ -111,7 +112,7 @@
      */
     protected final class Tree
     {
-        private ArrayList<Tree> children;
+        private ArrayList<Tree> children = new ArrayList<Tree>();
         private int value;
     
         public Tree(int value)
@@ -170,13 +171,14 @@
         if (height == 1) 
         {
     	    //TODO
-	   return 0;
+	   return height;
         }
         
     	//TODO
 	else
 	{
-	   return nnaryTreeSize(factorial(branchingFactor), height - 1);
+	   height = height - nnaryTreeSize(branchingFactor, height - 1);
+           return height;
 	}
     }
 
